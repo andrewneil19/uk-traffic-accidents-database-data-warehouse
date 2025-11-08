@@ -106,14 +106,14 @@ pip install -r requirements.txt
 
 4. Run the ETL pipelines:
 
-# Load relational database
+## Load relational database
 python/load_to_database.py
 
-# Load data warehouse
+## Load data warehouse
 python/load_to_data_warehouse.py
 ```
 
-## 📈 Sample Query Demonstrations
+## Sample Query Demonstrations
 
 These queries showcase different database operations and query patterns across OLTP, OLAP, and NoSQL implementations.
 
