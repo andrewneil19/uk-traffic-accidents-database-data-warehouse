@@ -2,11 +2,11 @@
 
 A comprehensive analytics engineering project demonstrating dimensional modeling, data warehouse design, ETL pipeline development, and multi-database implementations using UK traffic accident data.
 
-## 📊 Project Overview
+## Project Overview
 
 This project showcases end-to-end analytics engineering and data modeling skills through the design and implementation of both a normalized relational database (OLTP) and a dimensional data warehouse (OLAP). The project demonstrates proficiency in dimensional modeling, ETL pipeline development, SQL optimization, and multi-paradigm database implementations (SQL and NoSQL).
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **Database Systems:** Microsoft SQL Server, MongoDB
 - **Programming Languages:** Python, SQL, MongoDB Query Language
@@ -14,7 +14,7 @@ This project showcases end-to-end analytics engineering and data modeling skills
 - **Database Design:** Normalized schemas (3NF), Star schema (data warehouse)
 - **Query Types:** OLTP queries, OLAP queries (rollup, drilldown, slice, dice)
 
-## 🎯 Key Features
+## Key Features
 
 ### Task 1: Relational Database Design (OLTP)
 - **Normalized schema design** in Third Normal Form (3NF) with 9 interconnected tables
@@ -37,7 +37,7 @@ This project showcases end-to-end analytics engineering and data modeling skills
 - **Schema-flexible design** as contrast to rigid relational structure
 - **Performance comparison** between SQL and NoSQL query patterns
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 uk-traffic-accidents-database/
@@ -63,7 +63,7 @@ uk-traffic-accidents-database/
     └── README.md                    # Data source information
 ```
 
-## 🗃️ Database Schema
+## Database Schema
 
 ### Relational Database (OLTP)
 The normalized database includes the following tables:
@@ -88,15 +88,6 @@ Star schema optimized for analytical queries:
 - **DimVehicleDetail** - Vehicle characteristic dimensions
 - **DimDriver** - Driver demographic dimensions
 
-## 🚀 Getting Started
-
-### Prerequisites
-```bash
-# Python 3.8+
-# SQL Server (or SQL Server Express)
-# MongoDB
-```
-
 ### Installation
 
 1. Clone the repository:
@@ -115,12 +106,12 @@ pip install -r requirements.txt
    - Create databases in SQL Server: `UKAccidents_OLTP` and `UKAccidents_OLAP`
 
 4. Run the ETL pipelines:
-```bash
+
 # Load relational database
-python python/load_to_database.py
+python/load_to_database.py
 
 # Load data warehouse
-python python/load_to_data_warehouse.py
+python/load_to_data_warehouse.py
 ```
 
 ## 📈 Sample Query Demonstrations
