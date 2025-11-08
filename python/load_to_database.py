@@ -8,7 +8,8 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import ForeignKeyConstraint
 
 # Define the connection strings to db
-conn_string_db = "Driver={ODBC Driver 17 for SQL Server};Server=andy-neil-forem\\SQLEXPRESS;Database=Term_Project_Traffic_Accidents_OLTP;Trusted_Connection=yes;"
+# Conn strings edited for security
+conn_string_db = "Driver={ODBC Driver 17 for SQL Server};Server=your-server\\SQLEXPRESS;Database=Term_Project_Traffic_Accidents_OLTP;Trusted_Connection=yes;"
 conn_string_db = urllib.parse.quote_plus(conn_string_db)
 conn_string_db = "mssql+pyodbc:///?odbc_connect=%s" % conn_string_db
 
