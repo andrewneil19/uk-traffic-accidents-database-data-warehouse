@@ -127,7 +127,7 @@ python python/load_to_data_warehouse.py
 
 These queries showcase different database operations and query patterns across OLTP, OLAP, and NoSQL implementations.
 
-### OLTP Example: Filtering with subquery. Alternatively, use a CTE
+### OLTP Example: Filtering with subquery
 ```sql
 # Show accidents that occurred in Scotland where the number of vehicles was greater
 # than the average number of vehicles involved in all accidents
@@ -138,7 +138,8 @@ WHERE a.number_of_vehicles >
     (SELECT AVG(a2.number_of_vehicles)
     FROM Accident a2
     JOIN Location l2 ON a2.latitude = l2.latitude AND a2.longitude = l2.longitude
-    WHERE l2.in_Scotland = 'Yes') AND l.in_Scotland = 'Yes'
+    WHERE l2.in_Scotland = 'Yes')
+    AND l.in_Scotland = 'Yes'
     ORDER BY a.number_of_vehicles DESC;
 ```
 
