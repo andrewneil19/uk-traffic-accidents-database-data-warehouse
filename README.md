@@ -160,7 +160,7 @@ db.vehicles_extract.aggregate([
 ]);
 ```
 
-## 📊 Project Highlights
+## Project Highlights
 
 - **Database Architecture:** Designed and implemented both normalized (3NF) and dimensional (star schema) data models
 - **ETL Development:** Built automated Python pipelines for data extraction, transformation, and loading
@@ -171,7 +171,7 @@ db.vehicles_extract.aggregate([
 - **Stored Procedures:** Automated database management tasks through T-SQL procedures
 - **Schema Evolution:** Transformed normalized OLTP structure into optimized OLAP dimensional model
 
-## 💡 Key Skills Demonstrated
+## Key Skills Demonstrated
 
 - **Database Design:** Relational modeling with normalization (1NF, 2NF, 3NF) and dimensional modeling (star schema)
 - **Data Architecture:** OLTP vs OLAP design patterns and when to apply each
@@ -183,11 +183,11 @@ db.vehicles_extract.aggregate([
 - **Database Administration:** Table creation automation, constraint management, view creation
 - **Code Documentation:** Comprehensive technical documentation and schema visualization
 
-## 🎓 Academic Context
+## Academic Context
 
 This project was completed as part of MSIS 5663 (Database Management Systems) coursework at Oklahoma State University, demonstrating practical application of database design principles and data warehousing concepts.
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
