@@ -129,34 +129,28 @@ These queries showcase different database operations and query patterns across O
 
 ### OLTP Example: Filtering with subquery
 ```sql
-# Show accidents that occurred in Scotland where the number of vehicles was greater
-# than the average number of vehicles involved in all accidents
+--Show accidents that occurred in Scotland where the number of vehicles was greater
+--than the average number of vehicles involved in all accidents
 SELECT a.accident_index, a.number_of_vehicles, l.latitude, l.longitude
-FROM Accident a 
-JOIN Location l ON a.latitude = l.latitude AND a.longitude = l.longitude "
+FROM Accident a
+JOIN Location l ON a.latitude = l.latitude AND a.longitude = l.longitude
 WHERE a.number_of_vehicles > 
     (SELECT AVG(a2.number_of_vehicles)
-    FROM Accident a2
+    FROM Accident a2 
     JOIN Location l2 ON a2.latitude = l2.latitude AND a2.longitude = l2.longitude
     WHERE l2.in_Scotland = 'Yes')
     AND l.in_Scotland = 'Yes'
     ORDER BY a.number_of_vehicles DESC;
 ```
 
-### OLAP Example: Drilldown Operation (Hierarchical Aggregation)
+### OLAP Example: Rollup
 ```sql
-# Find total accident count for urban and rural areas, but now more detailed: for each year
-# Exclude unallocated area
-SELECT 
-    dd.year,
-    dl.urban_rural_area,
-    COUNT(*) AS accident_count
-FROM FactAccident fa
-JOIN DimDate dd ON fa.date_key = dd.date_key
-JOIN DimLocation dl ON fa.location_id = dl.location_id
-WHERE dl.urban_rural_area != 'Unallocated'
-GROUP BY dd.year, dl.urban_rural_area
-ORDER BY dd.year, dl.urban_rural_area;
+--Rollup - Find total accident count for urban and rural areas. Exclude unallocated area
+SELECT COALESCE(dl.urban_rural_area, 'All areas') AS 'Area Type',
+COUNT(*) AS 'Accident Count'
+FROM FactAccident fa JOIN DimLocation dl ON fa.location_id = dl.location_id
+GROUP BY ROLLUP (dl.urban_rural_area)
+HAVING dl.urban_rural_area != 'Unallocated';
 ```
 
 ### MongoDB Example: Aggregation Pipeline with Group and Project Stages
