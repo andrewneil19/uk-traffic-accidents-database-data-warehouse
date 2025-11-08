@@ -129,11 +129,17 @@ These queries showcase different database operations and query patterns across O
 
 ### OLTP Example: Filtering with Conditions
 ```sql
-SELECT accident_index, accident_date, accident_time, 
-       number_of_casualties, number_of_vehicles
-FROM Accident
-WHERE police_attended = 1
-ORDER BY accident_date DESC;
+Show accidents that occurred in Scotland where the number of vehicles was greater
+    # than the average number of vehicles involved in all accidents
+    SELECT a.accident_index, a.number_of_vehicles, l.latitude, l.longitude
+    FROM Accident a 
+    JOIN Location l ON a.latitude = l.latitude AND a.longitude = l.longitude "
+    WHERE a.number_of_vehicles > 
+        (SELECT AVG(a2.number_of_vehicles)
+        FROM Accident a2
+        JOIN Location l2 ON a2.latitude = l2.latitude AND a2.longitude = l2.longitude
+        WHERE l2.in_Scotland = 'Yes') AND l.in_Scotland = 'Yes'
+        ORDER BY a.number_of_vehicles DESC;
 ```
 
 ### OLAP Example: Drilldown Operation (Hierarchical Aggregation)
