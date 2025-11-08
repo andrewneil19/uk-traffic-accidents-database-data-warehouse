@@ -145,16 +145,18 @@ WHERE a.number_of_vehicles >
 
 ### OLAP Example: Drilldown Operation (Hierarchical Aggregation)
 ```sql
+# Find total accident count for urban and rural areas, but now more detailed: for each year
+# Exclude unallocated area
 SELECT 
-    d.year,
-    l.urban_rural_area,
+    dd.year,
+    dl.urban_rural_area,
     COUNT(*) AS accident_count
 FROM FactAccident fa
-JOIN DimDate d ON fa.date_key = d.date_key
-JOIN DimLocation l ON fa.location_id = l.location_id
-WHERE l.urban_rural_area != 'Unallocated'
-GROUP BY d.year, l.urban_rural_area
-ORDER BY d.year, l.urban_rural_area;
+JOIN DimDate dd ON fa.date_key = dd.date_key
+JOIN DimLocation dl ON fa.location_id = dl.location_id
+WHERE dl.urban_rural_area != 'Unallocated'
+GROUP BY dd.year, dl.urban_rural_area
+ORDER BY dd.year, dl.urban_rural_area;
 ```
 
 ### MongoDB Example: Aggregation Pipeline with Group and Project Stages
