@@ -6,10 +6,11 @@ from sqlalchemy import create_engine, Column, Integer, String, Date, Time, Float
 from sqlalchemy.orm import DeclarativeBase, sessionmaker, relationship
 
 # Define connection strings
-conn_string_db = "Driver={ODBC Driver 17 for SQL Server};Server=andy-neil-forem\\SQLEXPRESS;Database=Term_Project_Traffic_Accidents_OLTP;Trusted_Connection=yes;"
+# Edited connection strings for security
+conn_string_db = "Driver={ODBC Driver 17 for SQL Server};Server=your-server\\SQLEXPRESS;Database=Term_Project_Traffic_Accidents_OLTP;Trusted_Connection=yes;"
 conn_string_db = urllib.parse.quote_plus(conn_string_db)
 conn_string_db = "mssql+pyodbc:///?odbc_connect=%s" % conn_string_db
-conn_string_dw = "Driver={ODBC Driver 17 for SQL Server};Server=andy-neil-forem\\SQLEXPRESS;Database=Term_Project_Traffic_Accidents_OLAP_DW;Trusted_Connection=yes;"
+conn_string_dw = "Driver={ODBC Driver 17 for SQL Server};Server=your-server\\SQLEXPRESS;Database=Term_Project_Traffic_Accidents_OLAP_DW;Trusted_Connection=yes;"
 conn_string_dw = urllib.parse.quote_plus(conn_string_dw)
 conn_string_dw = "mssql+pyodbc:///?odbc_connect=%s" % conn_string_dw
 
