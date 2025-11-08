@@ -32,10 +32,9 @@ This project showcases end-to-end analytics engineering and data modeling skills
 - **Surrogate key management** for dimension tables
 
 ### Task 3: NoSQL Alternative Implementation
-- **MongoDB document database** demonstrating polyglot persistence approach
-- **Aggregation pipelines** for complex data transformations
-- **Schema-flexible design** as contrast to rigid relational structure
-- **Performance comparison** between SQL and NoSQL query patterns
+- **MongoDB document database** 
+- **Aggregation pipelines** 
+- **Schema-flexible design** 
 
 ## Project Structure
 
