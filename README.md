@@ -173,19 +173,19 @@ db.vehicles_extract.aggregate([
 
 ## Key Skills Demonstrated
 
-- **Database Design:** Relational modeling with normalization (1NF, 2NF, 3NF) and dimensional modeling (star schema)
+- **Database Design:** Relational modeling with normalization and dimensional modeling (star schema)
 - **Data Architecture:** OLTP vs OLAP design patterns and when to apply each
 - **ETL Development:** End-to-end data pipeline creation using Python, pandas, and database connectors
-- **SQL Proficiency:** Advanced query writing including joins, subqueries, window functions, and stored procedures
+- **SQL Proficiency:** Advanced query writing including joins, subqueries, aggregation
 - **OLAP Implementation:** Rollup, drilldown, slice, dice, and top-N query operations
 - **NoSQL Design:** Document database implementation and aggregation pipeline development
-- **Data Modeling:** Entity-relationship diagrams, surrogate key management, slowly changing dimensions
+- **Data Modeling:** Entity-relationship diagrams, surrogate key management
 - **Database Administration:** Table creation automation, constraint management, view creation
 - **Code Documentation:** Comprehensive technical documentation and schema visualization
 
 ## Academic Context
 
-This project was completed as part of MSIS 5663 (Database Management Systems) coursework at Oklahoma State University, demonstrating practical application of database design principles and data warehousing concepts.
+This project was completed as part of graduate coursework at Oklahoma State University, demonstrating practical application of database design principles and data warehousing concepts.
 
 ## License
 
